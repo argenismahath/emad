@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>actualizar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lista.css') }}">
+</head>
+
+<body>
+
+    <h1>Lista de Empleados </h1>
+
+    {%for i in empleados%}
+        <div class="empleado">
+            <div>
+                <div class="data"> nombre: {{i.name}} </div>
+                <div class="data"> edad: {{i.age}}</div>
+                <div class="data"> salario: {{i.salary}}</div>
+                <div class="data"> id: {{i.id}}</div>
+            </div>
+            <button class="enviar">
+                <a href="/empleado/actualizar/byid/{{i.id}}">actualizar</a>
+            </button>
+        </div>
+    {%endfor%}
+
+
+    <Button>
+        <a href="/"> inicio</a>
+    </Button>
+
+</body>
+
+</html>
